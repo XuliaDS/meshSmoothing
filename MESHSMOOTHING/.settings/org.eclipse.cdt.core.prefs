@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/0.475496271/CWD/delimiter=\:
+environment/project/0.475496271/CWD/operation=replace
+environment/project/0.475496271/CWD/value=/home/julia/ESP/EGADS/trunk/MESHSMOOTHING/
+environment/project/0.475496271/ESP_ARCH/delimiter=\:
+environment/project/0.475496271/ESP_ARCH/operation=append
+environment/project/0.475496271/ESP_ARCH/value=LINUX64
+environment/project/0.475496271/ESP_ROOT/delimiter=\:
+environment/project/0.475496271/ESP_ROOT/operation=append
+environment/project/0.475496271/ESP_ROOT/value=/home/julia/ESP/ESP/LINUX64/
+environment/project/0.475496271/append=true
+environment/project/0.475496271/appendContributed=true

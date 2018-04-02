@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo "INPUT MESH FILE"
+    exit
+fi
+
+
+meshfile=$1
+
+echo "#    SAMPLING DATA FILE $meshfile " > gpfile
+
+echo "set view equal xyz" >>gpfile
+echo "unset border" >>gpfile
+echo "unset xtics" >>gpfile
+echo "unset ytics" >>gpfile
+echo "unset ztics" >>gpfile
+echo "splot '$meshfile' u 1:2:3 w lines lc 25 lw 2 title ''" >>gpfile
+echo "pause -1 ">>gpfile
+
+gnuplot gpfile
+
+ 
