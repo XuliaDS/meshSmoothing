@@ -1,0 +1,45 @@
+#!/bin/bash
+
+echo "$#"
+
+if [ $# -eq 0 ]
+  then
+    echo "INPUT MESH FILE"
+    exit
+fi
+
+#monitorSize=$(xrandr | awk '/\*/{sub(/x/,",");print $1; exit}')
+#echo "$monitorSize"
+meshfile=$1
+echo "#    SAMPLING DATA FILE $meshfile " > gpfile
+#echo "set size 800,800" >>gpfile
+echo "set view equal xyz" >>gpfile
+echo "unset border" >>gpfile
+echo "unset xtics" >>gpfile
+echo "unset ytics" >>gpfile
+echo "unset ztics" >>gpfile
+if [[ $meshfile =~ .*STAR*. ]]
+then
+        echo "splot '$meshfile' u 1:2:3:(sprintf('%d'), \$4) w labels offset 1title ''" >>gpfile
+        echo "replot '$meshfile' u 1:2:3 w lines  title ''" >>gpfile 
+else
+	echo "splot '$meshfile' u 1:2:3 w lines  lw 3 " >>gpfile
+fi
+
+if [ $# -gt 1 ]
+  then
+	
+    for((i = 2; i <= $#; i++)) do 
+	meshfile=${!i}
+	if [[ $meshfile =~ .*STAR*. ]]
+        then
+	echo "replot '$meshfile' u 1:2:3:(sprintf('%d'), \$4) w labels offset 1 title ''" >>gpfile
+        echo "replot '$meshfile' u 1:2:3 w lines  title ''" >>gpfile 
+	else
+	echo "replot '$meshfile' u 1:2:3 w lines  lw 2 " >>gpfile
+	fi
+    done
+fi
+echo "pause -1 ">>gpfile
+
+gnuplot  gpfile 
