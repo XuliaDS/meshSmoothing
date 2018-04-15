@@ -11,7 +11,7 @@ TDIR = $(ESP_ROOT)/bin
 endif
 
 SDIR = src
-$(TDIR)/valence:	$(ODIR)/valence.o $(LDIR)/libwsserver.a
+$(TDIR)/Vvalence:	$(ODIR)/valence.o $(LDIR)/libwsserver.a
 	$(CXX) -g -o $(TDIR)/valence $(ODIR)/valence.o \
 		-L$(LDIR) -lwsserver -legads -lpthread -lnlopt -lz $(RPATH) -lm
 
