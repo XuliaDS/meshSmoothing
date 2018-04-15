@@ -21,10 +21,11 @@
  *
  */
 
-#define MKCYL
+//#define MKCYL
 
 #include "egads.h"
 #ifdef MKCYL
+
 
 int main(/*@unused@*/int argc, /*@unused@*/ char *argv[])
 {
