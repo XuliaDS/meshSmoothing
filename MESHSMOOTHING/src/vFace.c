@@ -21,7 +21,7 @@
  *
  */
 
-//#define MKCYL
+#define MKCYL
 
 #include "egads.h"
 #ifdef MKCYL
