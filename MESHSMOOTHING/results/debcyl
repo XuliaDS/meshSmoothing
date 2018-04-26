@@ -1,0 +1,1198 @@
+==11373== Memcheck, a memory error detector
+==11373== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==11373== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==11373== Command: ../valence ../cylinderFace.egads 20 0.4 0.2 2
+==11373== Parent PID: 11187
+==11373== 
+==11373== Conditional jump or move depends on uninitialised value(s)
+==11373==    at 0x859DA26: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== Conditional jump or move depends on uninitialised value(s)
+==11373==    at 0x859DA2B: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== Invalid read of size 8
+==11373==    at 0x407B2D: EG_swapAndSplit (valenceVis.c:2073)
+==11373==    by 0x407B2D: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373==  Address 0xe3739e0 is 16 bytes before a block of size 2,392 alloc'd
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x40A673: EG_createQuadMap (valenceVis.c:166)
+==11373==    by 0x40A673: main (valenceVis.c:2770)
+==11373== 
+==11373== Invalid read of size 4
+==11373==    at 0x407B32: EG_swapAndSplit (valenceVis.c:2073)
+==11373==    by 0x407B32: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==11373== 
+==11373== 
+==11373== Process terminating with default action of signal 11 (SIGSEGV)
+==11373==  Access not within mapped region at address 0x0
+==11373==    at 0x407B32: EG_swapAndSplit (valenceVis.c:2073)
+==11373==    by 0x407B32: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373==  If you believe this happened as a result of a stack
+==11373==  overflow in your program's main thread (unlikely but
+==11373==  possible), you can try to increase the size of the
+==11373==  main thread stack using the --main-stacksize= flag.
+==11373==  The main thread stack size used in this run was 8388608.
+==11373== 
+==11373== HEAP SUMMARY:
+==11373==     in use at exit: 3,233,556 bytes in 7,272 blocks
+==11373==   total heap usage: 1,175,253 allocs, 1,167,981 frees, 514,925,948 bytes allocated
+==11373== 
+==11373== 8 bytes in 1 blocks are definitely lost in loss record 133 of 3,661
+==11373==    at 0x4C2E80F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x8AE020F: Geom_BSplineCurve::Geom_BSplineCurve(TColgp_Array1OfPnt const&, TColStd_Array1OfReal const&, TColStd_Array1OfInteger const&, int, unsigned int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x902969C: GeomTools_CurveSet::ReadCurve(std::istream&, Handle_Geom_Curve&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x902A0B8: GeomTools_CurveSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x85DA388: BRepTools_ShapeSet::ReadGeometry(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x859DC49: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== 8 bytes in 1 blocks are definitely lost in loss record 134 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x40A425: main (valenceVis.c:2765)
+==11373== 
+==11373== 16 bytes in 1 blocks are definitely lost in loss record 455 of 3,661
+==11373==    at 0x4C2E80F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x8AE0177: Geom_BSplineCurve::Geom_BSplineCurve(TColgp_Array1OfPnt const&, TColStd_Array1OfReal const&, TColStd_Array1OfInteger const&, int, unsigned int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x902969C: GeomTools_CurveSet::ReadCurve(std::istream&, Handle_Geom_Curve&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x902A0B8: GeomTools_CurveSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x85DA388: BRepTools_ShapeSet::ReadGeometry(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x859DC49: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== 32 bytes in 1 blocks are definitely lost in loss record 833 of 3,661
+==11373==    at 0x4C2E80F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x8ADBA14: Geom_BSplineCurve::UpdateKnots() (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x8AE0245: Geom_BSplineCurve::Geom_BSplineCurve(TColgp_Array1OfPnt const&, TColStd_Array1OfReal const&, TColStd_Array1OfInteger const&, int, unsigned int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x902969C: GeomTools_CurveSet::ReadCurve(std::istream&, Handle_Geom_Curve&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x902A0B8: GeomTools_CurveSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x85DA388: BRepTools_ShapeSet::ReadGeometry(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x859DC49: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== 48 bytes in 1 blocks are definitely lost in loss record 3,113 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x8AE00A7: Geom_BSplineCurve::Geom_BSplineCurve(TColgp_Array1OfPnt const&, TColStd_Array1OfReal const&, TColStd_Array1OfInteger const&, int, unsigned int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x902969C: GeomTools_CurveSet::ReadCurve(std::istream&, Handle_Geom_Curve&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x902A0B8: GeomTools_CurveSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x85DA388: BRepTools_ShapeSet::ReadGeometry(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x859DC49: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== 48 bytes in 1 blocks are definitely lost in loss record 3,114 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x8AE02A8: Geom_BSplineCurve::Geom_BSplineCurve(TColgp_Array1OfPnt const&, TColStd_Array1OfReal const&, TColStd_Array1OfInteger const&, int, unsigned int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKG3d.so)
+==11373==    by 0x902969C: GeomTools_CurveSet::ReadCurve(std::istream&, Handle_Geom_Curve&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x902A0B8: GeomTools_CurveSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKGeomBase.so)
+==11373==    by 0x85DA388: BRepTools_ShapeSet::ReadGeometry(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x859DC49: TopTools_ShapeSet::Read(std::istream&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x85C203E: BRepTools::Read(TopoDS_Shape&, char const*, BRep_Builder const&, Handle_Message_ProgressIndicator const&) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKBRep.so)
+==11373==    by 0x4EB08CA: EG_loadModel (egadsIO.cpp:638)
+==11373==    by 0x409C24: main (valenceVis.c:2643)
+==11373== 
+==11373== 152 (48 direct, 104 indirect) bytes in 2 blocks are definitely lost in loss record 3,180 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x404629: EG_buildStar (valenceVis.c:968)
+==11373==    by 0x4079D0: EG_swapAndSplit (valenceVis.c:2039)
+==11373==    by 0x4079D0: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 320 (120 direct, 200 indirect) bytes in 5 blocks are definitely lost in loss record 3,208 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x404629: EG_buildStar (valenceVis.c:968)
+==11373==    by 0x40622B: EG_removeDoublet (valenceVis.c:1508)
+==11373==    by 0x4069C3: swappingOperation (valenceVis.c:1827)
+==11373==    by 0x406F45: EG_edgeSwap (valenceVis.c:1931)
+==11373==    by 0x406F45: EG_vertexOperator (valenceVis.c:2138)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x407FF4: EG_fullMeshRegularization (valenceVis.c:2214)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 544 bytes in 1 blocks are definitely lost in loss record 3,217 of 3,661
+==11373==    at 0x4C2E80F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x6645BFB: _GLOBAL__sub_I_Quantity_Convert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373==    by 0xFFEFFFEDE: ???
+==11373==    by 0xFFEFFFEE2: ???
+==11373== 
+==11373== 2,392 bytes in 2 blocks are definitely lost in loss record 3,510 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B72: backupQm (valenceVis.c:402)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 2,392 bytes in 2 blocks are definitely lost in loss record 3,511 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B72: backupQm (valenceVis.c:402)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 3,588 bytes in 3 blocks are definitely lost in loss record 3,515 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B72: backupQm (valenceVis.c:402)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 3,588 bytes in 3 blocks are definitely lost in loss record 3,516 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B72: backupQm (valenceVis.c:402)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 8,256 bytes in 2 blocks are definitely lost in loss record 3,585 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B51: backupQm (valenceVis.c:400)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 8,256 bytes in 2 blocks are definitely lost in loss record 3,586 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B60: backupQm (valenceVis.c:401)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 8,256 bytes in 2 blocks are definitely lost in loss record 3,587 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B51: backupQm (valenceVis.c:400)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 8,256 bytes in 2 blocks are definitely lost in loss record 3,588 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B60: backupQm (valenceVis.c:401)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 9,568 bytes in 2 blocks are definitely lost in loss record 3,589 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B93: backupQm (valenceVis.c:404)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 9,568 bytes in 2 blocks are definitely lost in loss record 3,590 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B93: backupQm (valenceVis.c:404)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 12,384 bytes in 3 blocks are definitely lost in loss record 3,591 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B51: backupQm (valenceVis.c:400)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 12,384 bytes in 3 blocks are definitely lost in loss record 3,592 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B60: backupQm (valenceVis.c:401)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 12,384 bytes in 3 blocks are definitely lost in loss record 3,593 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B51: backupQm (valenceVis.c:400)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 12,384 bytes in 3 blocks are definitely lost in loss record 3,594 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B60: backupQm (valenceVis.c:401)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 14,352 bytes in 3 blocks are definitely lost in loss record 3,595 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B93: backupQm (valenceVis.c:404)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 14,352 bytes in 3 blocks are definitely lost in loss record 3,596 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B93: backupQm (valenceVis.c:404)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,597 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E233: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,598 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E27A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,599 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E2BA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,600 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E2FA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,601 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E33A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,602 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E37A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,603 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E3BA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,604 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E3FA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,605 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E43A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,606 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E47A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,607 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E4BA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,608 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E4FA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,609 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E53A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,610 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E57A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,611 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E66A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,612 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E6AA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,613 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E6EA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,614 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E72A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,615 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E76A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,616 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E7AA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,617 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E7EA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,618 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E82A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,619 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E86A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,620 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E8AA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,621 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E8EA: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,622 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E92A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,623 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817E96A: _GLOBAL__sub_I_BRepGProp_Sinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,624 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817ED83: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,625 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EDC7: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,626 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EE04: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,627 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EE41: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,628 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EE82: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,629 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EEBF: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,630 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EEFC: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,631 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EF39: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,632 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EF76: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,633 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EFB3: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,634 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817EFF0: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,635 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F02D: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,636 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F06A: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,637 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F0A7: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,638 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F202: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,639 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F23F: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,640 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F27C: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,641 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810F4E: math_Vector::math_Vector(int, int, double) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F2BD: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,642 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F2FA: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,643 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F337: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,644 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F374: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,645 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F3B1: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,646 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F3EE: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,647 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F42B: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,648 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F468: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,649 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F4A5: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 15,624 bytes in 1 blocks are definitely lost in loss record 3,650 of 3,661
+==11373==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x668978F: Standard_MMgrRaw::Allocate(unsigned long) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKernel.so)
+==11373==    by 0x7810EE4: math_Vector::math_Vector(int, int) (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKMath.so)
+==11373==    by 0x817F4E2: _GLOBAL__sub_I_BRepGProp_Vinert.cxx (in /home/julia/ESP/OpenCASCADE-6.8.0/lib/libTKTopAlgo.so)
+==11373==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==11373==    by 0x40107CA: call_init (dl-init.c:30)
+==11373==    by 0x40107CA: _dl_init (dl-init.c:120)
+==11373==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==11373==    by 0x5: ???
+==11373==    by 0xFFEFFFEB6: ???
+==11373==    by 0xFFEFFFEC1: ???
+==11373==    by 0xFFEFFFED7: ???
+==11373==    by 0xFFEFFFEDA: ???
+==11373== 
+==11373== 248,768 (4,784 direct, 243,984 indirect) bytes in 2 blocks are definitely lost in loss record 3,656 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B84: backupQm (valenceVis.c:403)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 248,768 (4,784 direct, 243,984 indirect) bytes in 2 blocks are definitely lost in loss record 3,657 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B84: backupQm (valenceVis.c:403)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407859: EG_vertexOperator (valenceVis.c:2158)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40805D: EG_fullMeshRegularization (valenceVis.c:2223)
+==11373==    by 0x40BB19: main (valenceVis.c:2957)
+==11373== 
+==11373== 373,152 (7,176 direct, 365,976 indirect) bytes in 3 blocks are definitely lost in loss record 3,660 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B84: backupQm (valenceVis.c:403)
+==11373==    by 0x40472A: EG_vertexSplit (valenceVis.c:999)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== 373,152 (7,176 direct, 365,976 indirect) bytes in 3 blocks are definitely lost in loss record 3,661 of 3,661
+==11373==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11373==    by 0x4F01D0E: EG_alloc (egadsMemory.c:23)
+==11373==    by 0x402B84: backupQm (valenceVis.c:403)
+==11373==    by 0x40498C: EG_splittingOperation (valenceVis.c:1066)
+==11373==    by 0x40498C: EG_vertexSplit (valenceVis.c:1030)
+==11373==    by 0x407C16: EG_swapAndSplit (valenceVis.c:2097)
+==11373==    by 0x407C16: EG_vertexOperator (valenceVis.c:2167)
+==11373==    by 0x407F01: EG_meshOperator (valenceVis.c:2185)
+==11373==    by 0x40827E: EG_fullMeshRegularization (valenceVis.c:2255)
+==11373==    by 0x40BB62: main (valenceVis.c:2961)
+==11373== 
+==11373== LEAK SUMMARY:
+==11373==    definitely lost: 1,010,848 bytes in 118 blocks
+==11373==    indirectly lost: 1,220,224 bytes in 3,004 blocks
+==11373==      possibly lost: 0 bytes in 0 blocks
+==11373==    still reachable: 1,002,484 bytes in 4,150 blocks
+==11373==         suppressed: 0 bytes in 0 blocks
+==11373== Reachable blocks (those to which a pointer was found) are not shown.
+==11373== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11373== 
+==11373== For counts of detected and suppressed errors, rerun with: -v
+==11373== Use --track-origins=yes to see where uninitialised values come from
+==11373== ERROR SUMMARY: 87 errors from 87 contexts (suppressed: 0 from 0)
